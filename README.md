@@ -38,5 +38,5 @@ Ecommerce web application under development using ReactJS.
 
 ## Screenshots
 
-![Alt text](screenshots/details.jpg "Homepage")
+![Alt text](screenshots/homepage.jpg "Homepage")
 ![Alt text](screenshots/details.jpg "Prodcut Details Page")
