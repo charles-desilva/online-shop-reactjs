@@ -1,5 +1,7 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import Rating from "./Rating";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
   const { product } = props;
@@ -9,13 +11,17 @@ const Product = (props) => {
         <Card.Img src={product.image} variant="top" />
       </a>
       <Card.Body>
-        <a href={`product/${product._id}`}>
+        <Link to={`product/${product._id}`}>
           <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
-        </a>
+        </Link>
         <Card.Text as="div" className="my-3">
-          Rated {product.rating} out of {product.numReviews} reviews
+          <Rating
+            rating={product.rating}
+            numRating={product.numReviews}
+            color={product.rating === 5 ? "red" : undefined}
+          ></Rating>
         </Card.Text>
         <Card.Text as="h3">{product.price}</Card.Text>
       </Card.Body>
